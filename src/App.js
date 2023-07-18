@@ -47,13 +47,13 @@ function App() {
   function changePage(typeOfButton){
     setPageNo((prevPageNo) => {
       switch(typeOfButton){
-        case "<<" : return prevPageNo - 2
+        case "&laquo;" : return prevPageNo - 2
           break
-        case "<" : return prevPageNo - 1
+        case "&#8249;" : return prevPageNo - 1
           break
-        case ">" : return prevPageNo + 1
+        case "&#8250;" : return prevPageNo + 1
           break
-        case ">>" : return prevPageNo + 2
+        case "&raquo;" : return prevPageNo + 2
           break
         default : return prevPageNo
         }
@@ -62,7 +62,7 @@ function App() {
   }
  
   return (
-    <div className="App">
+    <div className="w-full h-full flex flex-col text-xl bg-slate-300">
       <Header />
       <Search search={search} setSearch={setSearch} />
       <Main users={users.filter((user) => user.name.toLowerCase().includes(search.toLowerCase()) || user.email.toLowerCase().includes(search.toLowerCase()) || user.role.toLowerCase().includes(search.toLowerCase())).slice(firstIndex,lastIndex)} removeUsers={removeUsers}/>

@@ -1,10 +1,9 @@
 
-
 function Header() {
   return (
-    <>
-      <h1 className='header'>Admin Page</h1>
-    </>
+    <strong className='text-3xl text-center bg-blue-200 p-2 '>
+      Admin Page
+    </strong>
 
   )
 }

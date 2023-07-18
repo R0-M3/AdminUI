@@ -3,7 +3,7 @@ import React from 'react'
 function Check({id}) {
   return (
     <>
-        <input type='checkbox' className="checkBox" value={id}/>
+        <input className='checkBox mx-auto' type='checkbox' value={id}/>
     </>
   )
 }

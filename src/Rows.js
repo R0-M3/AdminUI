@@ -20,7 +20,7 @@ function Rows({ user, removeUsers }) {
 
   return (
     <tr>
-      <td>
+      <td className="flex justify-center">
         <Check value={user.id} id={user.id}/>
       </td>
       {Object.entries(user).filter(([key]) => (key !== "id")).map(([key, value]) => (<TData key={key} types={key} data={value} edit={edit} updateUserData={updateUserData} userData={userData}/>))}
