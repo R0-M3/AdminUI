@@ -47,22 +47,22 @@ function App() {
   function changePage(typeOfButton){
     setPageNo((prevPageNo) => {
       switch(typeOfButton){
-        case "&laquo;" : return prevPageNo - 2
+        case "«" : return prevPageNo - 2
           break
-        case "&#8249;" : return prevPageNo - 1
+        case "‹" : return prevPageNo - 1
           break
-        case "&#8250;" : return prevPageNo + 1
+        case "›" : return prevPageNo + 1
           break
-        case "&raquo;" : return prevPageNo + 2
+        case "»" : return prevPageNo + 2
           break
-        default : return prevPageNo
+        default : console.log(typeOfButton); return prevPageNo
         }
     })
     console.log("Page Supposed To Change",typeOfButton);
   }
  
   return (
-    <div className="w-full h-full flex flex-col text-xl bg-slate-300">
+    <div className="w-full h-full flex flex-col text-xl">
       <Header />
       <Search search={search} setSearch={setSearch} />
       <Main users={users.filter((user) => user.name.toLowerCase().includes(search.toLowerCase()) || user.email.toLowerCase().includes(search.toLowerCase()) || user.role.toLowerCase().includes(search.toLowerCase())).slice(firstIndex,lastIndex)} removeUsers={removeUsers}/>

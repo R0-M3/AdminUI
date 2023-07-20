@@ -9,22 +9,22 @@ function Table({ users , removeUsers}) {
     }
 
     return (
-        <table className='w-full table table-fixed text-center'>
+        <table className='w-full h-max table table-fixed text-center border-separate border border-slate-400'>
             <thead>
                 <tr>
-                    <th className='h-full'>
+                    <th className='border border-slate-400'>
                         <input className='w-5 h-5 m-1' title='Select All' type='checkbox' id='selectAll' onChange={e => selectAllCheckboxes(e.target.checked)}/>
                     </th>
-                    <th>
+                    <th className='border border-slate-400'>
                         Name
                     </th>
-                    <th>
+                    <th className='border border-slate-400'>
                         Email
                     </th>
-                    <th>
+                    <th className='border border-slate-400'>
                         Role
                     </th>
-                    <th>
+                    <th className='border border-slate-400'>
                         Actions
                     </th>
                 </tr>

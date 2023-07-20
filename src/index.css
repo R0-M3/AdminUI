@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body{
+        @apply bg-slate-300;
+    }
+}
+@layer components{
+    .btn-new {
+        @apply text-white bg-sky-500 transition ease-in-out hover:bg-white hover:text-sky-500 hover:translate-x-px hover:translate-y-px active:scale-90 ;
+    }
+}
