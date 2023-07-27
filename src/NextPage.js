@@ -6,7 +6,7 @@ function NextPage({ noOfButtons, setPageNo, removeUsers, changePage, pageNo }) {
   function paginationButtons() {
     const buttons = []
     for (let i = 1; i <= noOfButtons; i++) {
-      buttons.push(<button className='rounded-full w-12 h-12 mx-1 btn-new focus:border-2 focus:border-sky-500 focus:bg-white focus:text-sky-500' key={i} value={i} onClick={(e) => setPageNo(e.target.value)} autoFocus={pageNo === i ? true : false} >{i}</button>)
+      buttons.push(<button className={ !(pageNo === i) ? 'text-white bg-sky-500 transition ease-in-out hover:bg-white hover:text-sky-500 hover:translate-x-px hover:translate-y-px active:scale-90 rounded-full w-12 h-12 mx-1' : 'rounded-full w-12 h-12 mx-1 bg-white text-sky-500  border-2 border-sky-500 transition ease-in-out hover:bg-white hover:text-sky-500 hover:translate-x-px hover:translate-y-px active:scale-90'} key={i} value={i} onClick={(e) => setPageNo(e.target.value)} >{i}</button>)
     }
     return buttons;
   }
