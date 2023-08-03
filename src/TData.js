@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react'
-
 function TData({ data, types, edit, userData, updateUserData }) {
   return (
     <td className='border border-slate-400'>
