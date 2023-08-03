@@ -38,7 +38,7 @@ function App() {
   const totalUsersPerPage = 10
   const lastIndex = pageNo * totalUsersPerPage
   const firstIndex = lastIndex - totalUsersPerPage
-  
+
 
   function removeUsers(selectedUsers){
     setUsers(() => (users.filter((user) => (!selectedUsers.includes(user.id)))))
@@ -55,7 +55,7 @@ function App() {
           break
         case "»" : return prevPageNo + 2
           break
-        default : console.log(typeOfButton); return prevPageNo
+        default : return typeOfButton
         }
     })
     console.log("Page Supposed To Change",typeOfButton);
@@ -64,7 +64,7 @@ function App() {
   return (
     <div className="w-full h-full flex flex-col text-xl">
       <Header />
-      <Search search={search} setSearch={setSearch} />
+      <Search setPageNo={setPageNo} search={search} setSearch={setSearch} />
       <Main users={users.filter((user) => user.name.toLowerCase().includes(search.toLowerCase()) || user.email.toLowerCase().includes(search.toLowerCase()) || user.role.toLowerCase().includes(search.toLowerCase())).slice(firstIndex,lastIndex)} removeUsers={removeUsers}/>
       <NextPage noOfButtons={Math.ceil(users.filter((user) => user.name.toLowerCase().includes(search.toLowerCase()) || user.email.toLowerCase().includes(search.toLowerCase()) || user.role.toLowerCase().includes(search.toLowerCase())).length/totalUsersPerPage)} pageNo={pageNo} setPageNo={setPageNo} removeUsers={removeUsers} changePage={changePage}/>
     </div>
